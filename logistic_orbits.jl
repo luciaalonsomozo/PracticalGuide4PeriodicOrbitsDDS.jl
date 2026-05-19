@@ -160,3 +160,24 @@ elseif in_interval(1, abs(λ))
 else
     return println("The periodic orbit is STABLE, as the eigenvalue λ is contained in the following interval: ", λ)
 end
+
+# ==============================================================================
+# SCAN LOGIC FOR GENERATING THOUSANDS OF ORBITS (COMMENTED OUT)
+# ==============================================================================
+# function main()
+#     periods = 2:80
+#
+#     # Parametric sweep over the interesting chaotic window of the Logistic Map
+#     for mu_val in 3.4:0.0005:4.0
+#         mu_str = string(round(mu_val, digits=4))
+#
+#         for n in periods
+#             for attempt in 1:10   # Up to m verification attempts per (μ, n) configuration
+#                 if run_main(mu_str, n) == true
+#                     break        # Orbit verified! Move forward to next period size
+#                 end
+#             end
+#         end
+#     end
+# end
+# ==============================================================================
